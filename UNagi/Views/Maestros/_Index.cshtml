@@ -1,0 +1,29 @@
+﻿@using UNagi.Models
+@using UNagi.ViewModel
+@model UNagi.ViewModel.MaestrosIndexViewModel
+
+<p class="main">Maestros</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Correo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var maestro in Model.Maestros)
+            {
+            <tr>
+                <td>@maestro.Email</td>
+                <td>@maestro.Nombre</td>
+                <td>@maestro.Apellido</td>
+                <td><a href="../Maestros/Details/@maestro.Id"><span class="glyphicon glyphicon-edit"></span></a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("New", "Maestros")"><button class="h2">Nuevo Maestro</button></a>

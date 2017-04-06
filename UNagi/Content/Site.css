@@ -1,0 +1,65 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: segoe ui;
+    color: #eee;
+    background-color: #222222;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/*Table styling*/
+.table th {
+    text-align: left;
+}
+.table table, .table td,.table th {
+    border: solid 1px #eee !important;
+    border-collapse: collapse;
+    padding: 5px 10px;
+    margin: 20px;
+}
+
+.main {
+    font-size: 24px;
+    color: rgb(0, 128, 255);
+    font-weight: bold;    
+}
+
+.h2 {
+    font-size: 13px;
+    background-color: #dddddd;
+    color: #222222;
+    border-radius: 5px;
+    width: 120px;
+    height: 20px;
+}
+
+.jumbotron {
+    color: #222;
+}
+
+.sign-out {
+    left: 100%;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #999999;
+}

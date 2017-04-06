@@ -1,0 +1,35 @@
+﻿<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#alumno-tab">Alumno</a></li>
+    <li><a data-toggle="tab" href="#maestro-tab">Maestro</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="alumno-tab" class="tab-pane fade in active">
+        <h3 class="main">Iniciar sesión como alumno</h3>
+        <table>
+            <tr>
+                <td><label for="sign-in-alumno-matricula">Matrícula</label></td>
+                <td><input type="text" id="sign-in-alumno-matricula" /></td>
+            </tr>
+            <tr>
+                <td><label for="sign-in-alumno-contraseña">Contraseña</label></td>
+                <td><input type="password" id="sign-in-alumno-contraseña" /></td>
+            </tr>
+        </table>
+        <button class="h2" onclick="SignInAlumno()">Iniciar sesión</button>
+    </div>
+    <div id="maestro-tab" class="tab-pane fade">
+        <h3 class="main">Iniciar sesión como maestro</h3>
+        <table>
+            <tr>
+                <td><label for="sign-in-maestro-email">Correo</label></td>
+                <td><input type="text" id="sign-in-maestro-email" /></td>
+            </tr>
+            <tr>
+                <td><label for="sign-in-maestro-contraseña">Contraseña</label></td>
+                <td><input type="password" id="sign-in-maestro-contraseña" /></td>
+            </tr>
+        </table>
+        <button class="h2" onclick="SignInMaestro()">Iniciar sesión</button>
+    </div>
+</div>

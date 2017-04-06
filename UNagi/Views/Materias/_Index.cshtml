@@ -1,0 +1,23 @@
+﻿@using UNagi.Models
+@using UNagi.ViewModel
+@model UNagi.ViewModel.MateriasIndexViewModel
+
+<p class="main">Maestros</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var materia in Model.Materias)
+    {
+        <tr>
+            <td>@materia.Nombre</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="@Url.Action("New", "Materias")"><button class="h2">Nueva Materia</button></a>

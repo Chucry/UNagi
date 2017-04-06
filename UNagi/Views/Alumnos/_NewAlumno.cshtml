@@ -1,0 +1,30 @@
+﻿<p class="main">Registrar nuevo alumno</p>
+
+<form name="nuevo-alumno" id="nuevo-alumno">
+    <table>
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td><label for="matricula">Matrícula:</label></td>
+                <td><input type="text" name="matricula" id="matricula" /></td>
+            </tr>
+            <tr>
+                <td><label for="nombre">Nombre:</label></td>
+                <td><input type="text" name="nombre" id="nombre" /></td>
+            </tr>
+            <tr>
+                <td><label for="apellido">Apellido:</label></td>
+                <td><input type="text" name="apellido" id="apellido" /></td>
+            </tr>
+            <tr>
+                <td><label for="contraseña">Contraseña:</label></td>
+                <td><input type="password" pattern="^([a-zA-Z0-9@*#!]{8,15})$" title="La contraseña debe tener una letra mayúscula, una minúscula, un número y un símbolo" name="contraseña" id="contraseña" /></td>
+            </tr>
+            <tr>
+                <td><label for="contraseña2">Confirma tu contraseña:</label></td>
+                <td><input type="password" pattern="^([a-zA-Z0-9@*#!]{8,15})$" title="La contraseña debe tener una letra mayúscula, una minúscula, un número y un símbolo" name="contraseña2" id="contraseña2" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="h2" onclick="CreateAlumno()">Registrar</button>
+</form>
