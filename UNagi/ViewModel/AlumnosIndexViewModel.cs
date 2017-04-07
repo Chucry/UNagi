@@ -7,12 +7,12 @@ using UNagi.Models;
 
 namespace UNagi.ViewModel
 {
-    public class AlumnoIndexViewModel
+    public class AlumnosIndexViewModel
     {
         public List<Alumno> Alumnos { get; set; }
         public UNagiDbContext _context = new UNagiDbContext();
 
-        public AlumnoIndexViewModel()
+        public AlumnosIndexViewModel()
         {
             Alumnos = new List<Alumno>();
             Alumnos = _context.Alumnos.ToList();

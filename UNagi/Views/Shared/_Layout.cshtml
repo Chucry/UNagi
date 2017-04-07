@@ -37,12 +37,14 @@
             <p>&copy; @DateTime.Now.Year - UNagi</p>
         </footer>
     </div>
+    <script src="../../Scripts/site.js"></script>
     <script src="../../Scripts/Alumnos/alumnos.js"></script>
     <script src="../../Scripts/Maestros/maestros.js"></script>
+    <script src="../../Scripts/Materias/materias.js"></script>
     <script>
         $(document).ready(function () {
             var html = '<li id="sesión"><button class="sign-out"onclick="SignOut()"><a href="#">Cerrar sesión</a></button></li>';
-            if (localStorage.sesionUNagi != "null") {
+            if (localStorage.sesionUNagi != "null" && localStorage.sesionUNagi != null) {
                 $("#sesión").empty();
                 $("#sesión").append(html);
             }

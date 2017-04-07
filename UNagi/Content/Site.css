@@ -48,8 +48,8 @@ textarea {
     background-color: #dddddd;
     color: #222222;
     border-radius: 5px;
-    width: 120px;
-    height: 20px;
+    width: 160px;
+    height: 30px;
 }
 
 .jumbotron {
@@ -62,4 +62,6 @@ textarea {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     color: #999999;
+    padding: 10px;
+    margin: 10px;
 }

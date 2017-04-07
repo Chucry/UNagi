@@ -1,0 +1,11 @@
+﻿@model UNagi.ViewModel.MateriasRegisterViewModel
+
+<p class="main">Registrar nueva materia</p>
+
+<label for="materias">Selecciona una materia: </label>
+<select name="materias" id="materias">
+    @foreach (var materia in Model.Materias)
+    {
+        <option value="@materia.Id">@materia.Nombre</option>
+    }
+</select>

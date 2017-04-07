@@ -10,6 +10,7 @@ CreateMaestroAsync = function (maestro) {
                 alert("No fue posible ingresar al maestro, intente nuevamente");
             } else {
                 alert("Maestro registrado con éxito");
+                loadDataAsync("Index", "Maestros");
             }
         }
     });
@@ -40,6 +41,7 @@ UpdateMaestroAsync = function(request) {
                 alert("Contraseña incorrecta");
             } else {
                 alert("Contraseña cambiada con éxito");
+                loadDataAsync("Index", "Maestros");
             }
         }
     });
@@ -69,7 +71,10 @@ SignInMaestroAsync = function (maestro) {
                 alert("La combinación de correo y contraseña no son válidos");
             } else {
                 localStorage.sesionUNagi = "maestro";
-                alert("Bienvenido");
+                localStorage.id = data.Id;
+                alert("Bienvenido " + data.Nombre + " " + data.Apellido);
+
+                loadDataAsync("Index", "Maestros");
             }
         }
     });

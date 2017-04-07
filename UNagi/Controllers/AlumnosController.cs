@@ -17,14 +17,14 @@ namespace UNagi.Controllers
         // GET: Alumnos
         public ActionResult Index()
         {
-            var viewModel = new AlumnoIndexViewModel();
+            var viewModel = new AlumnosIndexViewModel();
             return View("_Index", viewModel);
         }
 
         // GET: Alumnos/Details/5
         public ActionResult Details(int id)
         {
-            var viewModel = new AlumnoDetailsViewModel(Convert.ToInt32(id));
+            var viewModel = new AlumnosDetailsViewModel(id);
 
             return View("_Details", viewModel);
         }
@@ -41,7 +41,7 @@ namespace UNagi.Controllers
         {
             try
             {
-                var alumno = new Alumno()
+                var alumno = new Alumno
                 {
                     Matricula = matricula,
                     Nombre = nombre,

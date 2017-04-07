@@ -4,29 +4,31 @@
 
 <table>
     <tr>
-        <td><label>Email</label></td>
+        <td><label>Email:</label></td>
         <td><label>@Model.maestro.Email</label></td>
     </tr>
     <tr>
-        <td><label>Nombre</label></td>
+        <td><label>Nombre:</label></td>
         <td><label>@Model.maestro.Nombre</label></td>
     </tr>
     <tr>
-        <td><label>Apellido</label></td>
+        <td><label>Apellido:</label></td>
         <td><label>@Model.maestro.Apellido</label></td>
     </tr>
     <tr>
-        <td><label for="contraseñaActual">Contraseña actual</label></td>
+        <td><label for="contraseñaActual">Contraseña actual:</label></td>
         <td><input type="password" name="contraseña" id="contraseñaActual" /></td>
     </tr>
     <tr>
-        <td><label for="contraseñaNueva">Contraseña actual</label></td>
+        <td><label for="contraseñaNueva">Contraseña nueva:</label></td>
         <td><input type="password" name="contraseñaNueva" id="contraseñaNueva" /></td>
     </tr>
     <tr>
-        <td><label for="contraseñaNueva2">Contraseña actual</label></td>
+        <td><label for="contraseñaNueva2">Confirmar contraseña:</label></td>
         <td><input type="password" name="contraseñaNueva2" id="contraseñaNueva2" /></td>
     </tr>
+    <tr>
+        <td></td>
+        <td><button class="h2" id="@Model.maestro.Id" onclick="UpdateMaestro(this);">Aceptar</button></td>
+    </tr>
 </table>
-
-<button class="h2" id="@Model.maestro.Id" onclick="UpdateMaestro(this);">Cambiar contraseña</button>

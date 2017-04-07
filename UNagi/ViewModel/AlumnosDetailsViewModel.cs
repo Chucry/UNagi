@@ -7,17 +7,17 @@ using UNagi.Models;
 
 namespace UNagi.ViewModel
 {
-    public class AlumnoDetailsViewModel
+    public class AlumnosDetailsViewModel
     {
         public Alumno alumno;
         public UNagiDbContext _context = new UNagiDbContext();
 
-        public AlumnoDetailsViewModel()
+        public AlumnosDetailsViewModel()
         {
             alumno = new Alumno();
         }
 
-        public AlumnoDetailsViewModel(int id)
+        public AlumnosDetailsViewModel(int id)
         {
             alumno = _context.Alumnos.Single(a => a.Id == id);
         }

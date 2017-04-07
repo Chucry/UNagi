@@ -9,6 +9,7 @@ namespace UNagi.ViewModel
 {
     public class MateriasIndexViewModel
     {
+        public int id;
         public List<Materia> Materias { get; set; }
         public UNagiDbContext _context = new UNagiDbContext();
 

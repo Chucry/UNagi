@@ -5,11 +5,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UNagi.Data;
+using UNagi.Models;
 
 namespace UNagi.Controllers
 {
     public class HomeController : Controller
     {
+        public static Sesion _sesion = new Sesion();
+
         public UNagiDbContext _context = new UNagiDbContext();
 
         public ActionResult Index()
@@ -31,7 +34,10 @@ namespace UNagi.Controllers
 
                 if (alumno.Contraseña == contraseña)
                 {
-                    var json = Json(true);
+                    _sesion.Id = alumno.Id;
+                    _sesion.Usuario = TipoUsuario.Alumno;
+
+                    var json = Json(alumno, JsonRequestBehavior.AllowGet);
                     return json;
                 }
                 else
@@ -56,7 +62,10 @@ namespace UNagi.Controllers
 
                 if (maestro.Contraseña == contraseña)
                 {
-                    var json = Json(true);
+                    _sesion.Id = maestro.Id;
+                    _sesion.Usuario = TipoUsuario.Maestro;
+
+                    var json = Json(maestro, JsonRequestBehavior.AllowGet);
                     return json;
                 }
                 else
@@ -71,6 +80,14 @@ namespace UNagi.Controllers
                 var json = Json(false);
                 return json;
             }
+        }
+
+        public ActionResult SignOut()
+        {
+            _sesion = new Sesion();
+
+            var json = Json(true);
+            return json;
         }
 
         public ActionResult Author()

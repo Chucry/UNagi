@@ -10,6 +10,7 @@ CreateAlumnoAsync = function (alumno) {
                 alert("No fue posible ingresar al alumno, intente nuevamente");
             } else {
                 alert("Alumno registrado con éxito");
+                loadDataAsync("Index", "Alumnos");
             }
         }
     });
@@ -40,6 +41,7 @@ UpdateAlumnoAsync = function (request) {
                 alert("Contraseña incorrecta");
             } else {
                 alert("Contraseña cambiada con éxito");
+                loadDataAsync("Index", "Alumnos");
             }
         }
     });
@@ -59,17 +61,20 @@ UpdateAlumno = function (element) {
     }
 }
 
-SignInAlumnoAsync = function(alumno) {
+SignInAlumnoAsync = function (alumno) {
     $.ajax({
         type: "POST",
         url: "/Home/SignInAlumno",
         data: alumno,
-        success: function(data, status) {
+        success: function (data, status) {
             if (!data) {
                 alert("La combinación de matrícula y contraseña no son válidos");
             } else {
                 localStorage.sesionUNagi = "alumno";
-                alert("Bienvenido");
+                localStorage.id = data.Id;
+                alert("Bienvenido " + data.Nombre + " " + data.Apellido);
+
+                loadDataAsync("Index", "Alumnos");
             }
         }
     });
@@ -83,7 +88,22 @@ SignInAlumno = function () {
     SignInAlumnoAsync(alumno);
 }
 
-SignOut =  function() {
+SignOutAsync = function () {
+    $.ajax({
+        type: "POST",
+        url: "/Home/SignOut",
+        success: function (data, status) {
+            if (!data) {
+                alert("No se pudo cerrar sesión");
+            } else {
+                loadDataAsync("Index", "Home");
+            }
+        }
+    });
+}
+
+SignOut = function () {
     localStorage.sesionUNagi = null;
-    reload();
+    localStorage.id = null;
+    SignOutAsync();
 }
