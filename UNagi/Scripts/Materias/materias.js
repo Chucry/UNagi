@@ -32,22 +32,20 @@ SignUpAlumnoAsync = function (request) {
         type: "POST",
         url: "/Materias/SignUp",
         data: request,
-        success: function() {
+        success: function(data) {
             if (!data) {
                 alert("No fue posible inscribirte en la materia");
             } else {
                 alert("Materia dada de alta con éxito");
-                loadDataAsync("Index", "Alumnos");
+                loadDataAsync("List", "Materias");
             }
         }
     });
-
 }
 
 SignUpAlumno = function() {
     var request = {
-        idAlumno: localStorage.id,
         idMateria: $("#materias")[0].value
     };
-    SignUpAlumno(request);
+    SignUpAlumnoAsync(request);
 }

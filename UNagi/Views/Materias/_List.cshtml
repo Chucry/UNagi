@@ -1,0 +1,19 @@
+﻿@model UNagi.ViewModel.MateriasListViewModel
+    
+<p class="main">Mis Materias</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var materia in Model.Materias)
+    {
+        <tr>
+            <td>@materia.Nombre</td>
+        </tr>
+    }
+    </tbody>
+</table>

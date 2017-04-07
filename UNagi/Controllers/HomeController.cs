@@ -89,12 +89,5 @@ namespace UNagi.Controllers
             var json = Json(true);
             return json;
         }
-
-        public ActionResult Author()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

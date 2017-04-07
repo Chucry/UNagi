@@ -21,12 +21,6 @@ namespace UNagi.Controllers
             return View("_Index", viewModel);
         }
 
-        // GET: Materias/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Materias/Create
         public ActionResult New()
         {
@@ -75,16 +69,23 @@ namespace UNagi.Controllers
             return View("_Register", viewModel);
         }
 
+        public ActionResult List()
+        {
+            var id = HomeController._sesion.Id;
+            var viewModel = new MateriasListViewModel(id);
+            return View("_List", viewModel);
+        }
+
         [HttpPost]
-        public ActionResult SignUp(int idAlumno, string idMateria)
+        public ActionResult SignUp(string idMateria)
         {
             try
             {
-                var alumno = _context.Alumnos.Single(a => a.Id == idAlumno);
+                var id = HomeController._sesion.Id;
+                var alumno = _context.Alumnos.Single(a => a.Id == id);
                 var materia = _context.Materias.Single(m => m.Nombre == idMateria);
 
                 alumno.Materias.Add(materia);
-
                 _context.SaveChanges();
 
                 var json = Json(true);
@@ -95,50 +96,6 @@ namespace UNagi.Controllers
                 Debug.WriteLine(e);
                 var json = Json(false);
                 return json;
-            }
-        }
-
-        // GET: Materias/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Materias/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Materias/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Materias/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
             }
         }
     }

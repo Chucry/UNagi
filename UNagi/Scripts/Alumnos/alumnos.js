@@ -74,7 +74,7 @@ SignInAlumnoAsync = function (alumno) {
                 localStorage.id = data.Id;
                 alert("Bienvenido " + data.Nombre + " " + data.Apellido);
 
-                loadDataAsync("Index", "Alumnos");
+                loadDataAsync("Index", "Materias");
             }
         }
     });
